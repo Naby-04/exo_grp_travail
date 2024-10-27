@@ -2,27 +2,95 @@
 // À partir des variables suivantes, faire en sorte d'inverser leur valeur:
 // -Declarer deux variables a et b et affecter leur respectivement ces valeurs: 1 et 5.
 // -Inverser leurs valeurs de telle sorte que les valeurs se presente comme tel: a = 5; b = 1;
+
+let a = 1;
+let b = 5;
+// premiere methode
+let c = a;
+a = b;
+b = c;
+console.log("a = " + a, "\n" + "b = " + b);
+// deuxieme methode
+[a, b] = [b, a];
+console.log("a = " + a, "\n" + "b = " + b);
 // -----------------------------------------------------------------------------------------------------------------
 
 // Exercice2: Puissance de 2
 // -Realiser un programme permettant à l'utilisateur de saisir la puissance de 2 qu'il souhaite.
 // -Exemple: si l'utilisateur saisit 3, le programme affiche 2^3 = 8;
+let puissance = 0; //initialisons une variable puissance à 0
+while (true) {
+  // Tant que c'est vrai Execute ce bloc de code
+  //let x = prompt("Vous voulez le resultat de 2 à quel puissance ?"); // demande à l'utilisateur de rentrer un nombre a afficher a la puissance 2
+  //puissance = Number(x);
+  if (!isNaN(puissance)) {
+    break; // sortie boucle
+  }
+}
+console.log("2 ^ " + puissance + " = " + 2 ** puissance);
 
 // -----------------------------------------------------------------------------------------------------------------
 
 // Exercice3: Afficher une table de multiplication
 // -Demander à l'utilisateur de rentrer la table de multiplication souhaiter.(de 1 à 10)
 
+let chiffre = 0;
+while (true) {
+  let x = prompt("Vous voulez la table de multiplication de ?");
+  chiffre = Number(x);
+  if (!isNaN(chiffre) && chiffre != 0) {
+    break; // sortie boucle
+  }
+}
+for (let i = 0; i <= 10; i++) {
+  console.log(chiffre + " x " + i + " = " + i * chiffre);
+}
 // -----------------------------------------------------------------------------------------------------------------
 
 // Exercice4: Saisie clavier
 // -Vous devez realiser un programme de saisir le nom, le prenom et l'age d'un utilisateur.
 // -Le programme affiche ensuite le message suivant: votre nom est:"le nom que l'utilisateur à rentré";votre prenom est:"le prenom que l'utilisateur à rentré";vous avez:"l'age que l'utilisateur à rentré"
+while (true) {
+  var prenom = prompt("Veuillez rentrer votre Prénom");
+  let prenomx = Number(prenom);
+  if (isNaN(prenomx)) {
+    break;
+  }
+}
+while (true) {
+  var nom = prompt("Veuillez rentrer votre Nom");
+  let nomx = Number(nom);
+  if (isNaN(nomx)) {
+    break;
+  }
+}
+while (true) {
+  var age = prompt("Veuillez rentrer votre Âge");
+  let agex = Number(age);
+  if (!isNaN(agex) && agex != 0) {
+    break;
+  }
+}
 
+alert(
+  "Le Prenom de l'utilisateur est : " +
+    prenom +
+    "\n" +
+    "Le nom de l'utilisateur est: " +
+    nom +
+    "\n" +
+    "L'âge de l'utilisateur est de : " +
+    age
+);
 // -----------------------------------------------------------------------------------------------------------------
 
 // Exercice5: Utiliser une boucle for pour afficher les nombres de 1 à 10 dans la console.
 
+let container = [];
+for (let i = 0; i <= 10; i++) {
+  container.push(i);
+}
+console.table(container);
 // -----------------------------------------------------------------------------------------------------------------
 
 // Exercice6: Utiliser une boucle while pour afficher les nombres de 1 à 10 dans la console.
