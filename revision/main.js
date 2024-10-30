@@ -47,10 +47,41 @@ function test(a) {
 
 // Exercice 3 : Opérations sur les chaînes de caractères
 // Créez une fonction formatName qui prend un nom complet sous la forme "dupont jean" et retourne une version formatée avec des majuscules : "Jean Dupont".
-// Opérateurs
 
+// var personne = "jean dupont";
+// var personneMajuscule = personne.toUpperCase();
+// var personnePremierLettreMajuscule =
+//   personne.charAt(0).toUpperCase() +
+//   personne.slice(1, 5) +
+//   personne.charAt(5).toUpperCase() +
+//   personne.slice(6);
+// var personneReverse = personnePremierLettreMajuscule
+//   .split(" ")
+//   .reverse()
+//   .join(" ");
+// console.log(
+//   personne +
+//     "\n" +
+//     personneMajuscule +
+//     "\n" +
+//     personnePremierLettreMajuscule +
+//     "\n" +
+//     personneReverse
+// );
+function firstLetterToUpperCase(personne) {
+  let tableau = personne.toLowerCase().split(" ");
+  let newTableau = tableau.map((element) => {
+    return element.charAt(0).toUpperCase() + element.slice(1);
+  });
+  console.table(newTableau);
+  newTableau.reverse();
+  let newPersonne = newTableau.join(" ");
+  return newPersonne;
+}
+console.log(firstLetterToUpperCase("jean dupont"));
 // ------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Opérateurs
 // Exercice 4 : Opérations arithmétiques et logiques
 // Implémentez une calculatrice simple avec des opérations addition, soustraction, multiplication, division et modulo. La fonction calculator doit prendre en paramètre deux nombres et un opérateur (+, -, *, /, %), et retourner le résultat.
 
